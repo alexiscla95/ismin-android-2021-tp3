@@ -6,6 +6,7 @@ import android.widget.EditText
 
 
 import android.os.Bundle
+import android.view.Menu
 import android.widget.TextView
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -40,6 +41,13 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
 
     private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             result: ActivityResult ->
